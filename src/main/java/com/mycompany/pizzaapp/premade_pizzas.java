@@ -22,7 +22,7 @@ public class premade_pizzas
     private void load_data() throws FileNotFoundException
     {
         //System.out.println("im in premade loaddata");
-        txt_db db = new txt_db();
+        database db = new txt_db();
         a = db.read();
         //System.out.println(a.size());
     }

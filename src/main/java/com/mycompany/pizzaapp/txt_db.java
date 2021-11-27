@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class txt_db 
+public class txt_db implements database 
 {
     public void write(String info)
     {
