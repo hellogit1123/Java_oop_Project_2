@@ -45,10 +45,6 @@ public class _Connection
         o.setOrder(cart, customerD);
         oq.insertOngoingOrder(o);
     }
-    public ArrayList get_data()
-    {    
-        return this.pre.get_data();
-    }
     public boolean checkName(String name)
     {
         return this.customerD.checkName(name);

@@ -6,7 +6,7 @@ package com.mycompany.pizzaapp;
  */
 public interface MyIterator 
 {
-    String next();
+    Pizza next();
     boolean hasNext(); 
     void resetIndex();
 }

@@ -17,9 +17,11 @@ public class __Order_Custom extends javax.swing.JFrame {
      * Creates new form Order_Custom
      */
     char size = 'l';
-    ArrayList<Pizza> pz;
+    ArrayList<Pizza> pz = new ArrayList<Pizza>();
     _Connection c;
     int x = 150;
+    premade_pizzas pre = new premade_pizzas();
+    MyIterator it = pre.iter();
     
     public __Order_Custom() {
         initComponents();
@@ -27,7 +29,7 @@ public class __Order_Custom extends javax.swing.JFrame {
     
     public __Order_Custom(_Connection c) {
         this.c = c;
-        pz = c.get_data();
+        //pz = c.get_data();
         initComponents();
     }
 
@@ -461,80 +463,72 @@ public class __Order_Custom extends javax.swing.JFrame {
         ImageIcon pizza;
         int index = 0;
         String location = "";
-        MyData m = new MyData();
-        MyIterator it = m.iter();
-        
+
+        while(it.hasNext())
+            pz.add(it.next());
+
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel7.setText("");
         jLabel7.setIcon(pizza);
-        jTextPane1.setText(it.next());
+        jTextPane1.setText(pz.get(index++).pizzaInfo());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel8.setText("");
         jLabel8.setIcon(pizza);
-        jTextPane2.setText(it.next());
+        jTextPane2.setText(pz.get(index++).pizzaInfo());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel9.setText("");
         jLabel9.setIcon(pizza);
-        jTextPane3.setText(it.next());
+        jTextPane3.setText(pz.get(index++).pizzaInfo());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel10.setText("");
         jLabel10.setIcon(pizza);
-        jTextPane4.setText(it.next());        
+        jTextPane4.setText(pz.get(index++).pizzaInfo());        
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel11.setText("");
         jLabel11.setIcon(pizza);
-        jTextPane5.setText(it.next());
+        jTextPane5.setText(pz.get(index++).pizzaInfo());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel12.setText("");
         jLabel12.setIcon(pizza);
-        jTextPane6.setText(it.next()); 
+        jTextPane6.setText(pz.get(index++).pizzaInfo()); 
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel13.setText("");
         jLabel13.setIcon(pizza);
-        jTextPane7.setText(it.next());
+        jTextPane7.setText(pz.get(index++).pizzaInfo());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel14.setText("");
         jLabel14.setIcon(pizza);
-        jTextPane8.setText(it.next()); 
+        jTextPane8.setText(pz.get(index++).pizzaInfo()); 
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
         pizza = new ImageIcon((new ImageIcon(location)).getImage().getScaledInstance(x,x,x));
-        index++;
         jLabel15.setText("");
         jLabel15.setIcon(pizza);
-        jTextPane9.setText(it.next()); 
+        jTextPane9.setText(pz.get(index++).pizzaInfo()); 
         
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -561,6 +555,7 @@ public class __Order_Custom extends javax.swing.JFrame {
             p.show();
         }else
         {
+            
             Pizza p;
             p = pz.get(index);
             p.setSize(size);

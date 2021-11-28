@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class premade_pizzas 
 {
-    private ArrayList<String> a = new ArrayList<String>();
+    private ArrayList<Pizza> a = new ArrayList<Pizza>();
     premade_pizzas()
     {
         try {
@@ -21,14 +21,48 @@ public class premade_pizzas
     
     private void load_data() throws FileNotFoundException
     {
-        //System.out.println("im in premade loaddata");
         database db = new txt_db();
         a = db.read();
-        //System.out.println(a.size());
     }
     
-    public ArrayList get_data()
+    private ArrayList get_data()
     {    
         return this.a;
+    }
+    
+    private static class Iterate implements MyIterator
+    {
+        private final premade_pizzas data;
+        private int index;
+        private int size;
+        
+        public Iterate(premade_pizzas data)
+        {
+            this.data = data;
+            this.index = 0;
+            this.size = data.a.size();
+        }
+        
+        public boolean hasNext()
+        {
+            if(index<size)
+                return true;
+           return false; 
+        }
+        
+        public Pizza next()
+        {
+            return data.a.get(index++);
+        }
+        
+        public void resetIndex()
+        {
+            this.index = 0;
+        }
+    }
+    
+    public MyIterator iter()
+    {
+        return new Iterate(this);
     }
 }
