@@ -9,8 +9,12 @@ import java.util.logging.Logger;
 public class premade_pizzas 
 {
     private ArrayList<Pizza> a = new ArrayList<Pizza>();
+    private ArrayList<String> s = new ArrayList<String>();
+    private Pizza p;
+    
     premade_pizzas()
     {
+        System.out.println("im in premade_pizza constructor");
         try {
             this.load_data();
         } catch (FileNotFoundException ex) {
@@ -21,8 +25,22 @@ public class premade_pizzas
     
     private void load_data() throws FileNotFoundException
     {
+        System.out.println("im in load_data");
         database db = new txt_db();
-        a = db.read();
+        s = db.read();
+        System.out.println("after db.read before loop");
+        for(String str:s)
+        {
+            p = new Pizza();
+            String[] parts = str.split(" ");
+            p.setName(parts[0]);
+            p.setSize(parts[1].charAt(0));
+            p.addToppings(parts[2]);
+            p.addToppings(parts[3]);
+            p.setSauce(parts[4]);
+            p.setPrice(Double.valueOf(parts[5]));
+            a.add(p);
+        }
     }
     
     private ArrayList get_data()

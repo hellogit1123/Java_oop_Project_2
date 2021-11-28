@@ -18,7 +18,7 @@ public class txt_db implements database
     public ArrayList read()
     {
         //System.out.println("I am in db read");
-        ArrayList<Pizza> a = new ArrayList<Pizza>();
+        ArrayList<String> s = new ArrayList<String>();
         int index = 0;
         Pizza p;
         
@@ -26,23 +26,20 @@ public class txt_db implements database
         {
             String location = "";
             location = location + "pizzas/pizza" + String.valueOf(index) +".txt";
-            //System.out.println(location);
             File file = new File(location);
             if(file.exists())
             {
-                //System.out.println("im inside file exists");
+                String info  = "";
                 try {
                     //System.out.println("hello im in db");
                     Scanner input = new Scanner(file);
-                    p = new Pizza();
-                    p.setName(input.nextLine());
-                    p.setSize(input.nextLine().charAt(0));
-                    p.addToppings(input.nextLine());
-                    p.addToppings(input.nextLine());
-                    p.setSauce(input.nextLine());
-                    p.setPrice(Double.valueOf(input.nextLine()));
-                    a.add(p);
-                    System.out.println(index);
+                    info = info + input.nextLine()+ " ";
+                    info = info + input.nextLine()+ " ";
+                    info = info + input.nextLine()+ " ";
+                    info = info + input.nextLine()+ " ";
+                    info = info + input.nextLine()+ " ";
+                    info = info + input.nextLine()+ " ";
+                    s.add(info);
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(txt_db.class.getName()).log(Level.SEVERE, null, ex);
                     System.out.println("File not found");
@@ -50,7 +47,6 @@ public class txt_db implements database
             }
             index++;
         }
-        //System.out.println(a.size());
-        return a;
+        return s;
     }
 }

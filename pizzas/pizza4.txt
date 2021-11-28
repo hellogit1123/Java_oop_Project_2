@@ -1,6 +1,6 @@
 Pepperoni_Pizza
 L
 Pepperoni
-Extra Cheese
+Extra_Cheese
 Tomato
 2.99
