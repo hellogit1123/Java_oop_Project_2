@@ -18,7 +18,7 @@ public class CustomerData
     public String getOrderNum()
     {
         String s = "";
-        s = s+(this.name).substring(0,2);
+        s = s+(this.name).substring(0,1);
         s = s+(this.phoneNumber).substring(0,2);
         s = s+(this.cardNumber).substring(0,2);
         return s;
