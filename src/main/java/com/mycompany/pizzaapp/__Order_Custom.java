@@ -461,6 +461,8 @@ public class __Order_Custom extends javax.swing.JFrame {
         ImageIcon pizza;
         int index = 0;
         String location = "";
+        MyData m = new MyData();
+        MyIterator it = m.iter();
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -468,7 +470,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel7.setText("");
         jLabel7.setIcon(pizza);
-        jTextPane1.setText(pz.get(index-1).pizzaInfo());
+        jTextPane1.setText(it.next());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -476,7 +478,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel8.setText("");
         jLabel8.setIcon(pizza);
-        jTextPane2.setText(pz.get(index-1).pizzaInfo());
+        jTextPane2.setText(it.next());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -484,7 +486,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel9.setText("");
         jLabel9.setIcon(pizza);
-        jTextPane3.setText(pz.get(index-1).pizzaInfo());
+        jTextPane3.setText(it.next());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -492,7 +494,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel10.setText("");
         jLabel10.setIcon(pizza);
-        jTextPane4.setText(pz.get(index-1).pizzaInfo());        
+        jTextPane4.setText(it.next());        
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -500,7 +502,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel11.setText("");
         jLabel11.setIcon(pizza);
-        jTextPane5.setText(pz.get(index-1).pizzaInfo());
+        jTextPane5.setText(it.next());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -508,7 +510,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel12.setText("");
         jLabel12.setIcon(pizza);
-        jTextPane6.setText(pz.get(index-1).pizzaInfo()); 
+        jTextPane6.setText(it.next()); 
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -516,7 +518,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel13.setText("");
         jLabel13.setIcon(pizza);
-        jTextPane7.setText(pz.get(index-1).pizzaInfo());
+        jTextPane7.setText(it.next());
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -524,7 +526,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel14.setText("");
         jLabel14.setIcon(pizza);
-        jTextPane8.setText(pz.get(index-1).pizzaInfo()); 
+        jTextPane8.setText(it.next()); 
         
         location = "";
         location = location + "pizzas/pizza" + String.valueOf(index) +".png";
@@ -532,7 +534,7 @@ public class __Order_Custom extends javax.swing.JFrame {
         index++;
         jLabel15.setText("");
         jLabel15.setIcon(pizza);
-        jTextPane9.setText(pz.get(index-1).pizzaInfo()); 
+        jTextPane9.setText(it.next()); 
         
     }//GEN-LAST:event_jButton12ActionPerformed
 
