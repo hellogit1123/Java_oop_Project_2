@@ -20,7 +20,6 @@ public class txt_db implements database
         //System.out.println("I am in db read");
         ArrayList<String> s = new ArrayList<String>();
         int index = 0;
-        Pizza p;
         
         while(index<=8)
         {
