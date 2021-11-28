@@ -11,6 +11,7 @@ public class _Connection
     private OrderQueue oq;
     private Pizza p;
     private premade_pizzas pre;
+    private database d = new txt_db();
     
     _Connection(Cart c) //throws FileNotFoundException
     {
@@ -44,6 +45,14 @@ public class _Connection
         customerD = new CustomerData(name, phone, card);
         o.setOrder(cart, customerD);
         oq.insertOngoingOrder(o);
+        
+        String content = "-------------------------------------------------------------------\n";
+        content += "CustomerData: ";
+        content+= customerD.getAllinfo() +"\n\n";
+        content += "Orders : \n"+cart.getPizzaInfo();
+        content += "\n-------------------------------------------------------------------\n";
+        System.out.println(content);
+        d.write(content);
     }
     public boolean checkName(String name)
     {
