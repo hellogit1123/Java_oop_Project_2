@@ -13,9 +13,9 @@ public class _Connection
     private premade_pizzas pre;
     private database d = new txt_db();
     
-    _Connection() //throws FileNotFoundException
+    _Connection(Cart c) //throws FileNotFoundException
     {
-        this.cart = new Cart();
+        this.cart = c;
         this.customerD = new CustomerData();
         this.o = new Order();
         this.oq = new OrderQueue();
