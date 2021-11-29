@@ -13,9 +13,9 @@ public class _Connection
     private premade_pizzas pre;
     private database d = new txt_db();
     
-    _Connection(Cart c) //throws FileNotFoundException
+    _Connection() //throws FileNotFoundException
     {
-        this.cart = c;
+        this.cart = new Cart();
         this.customerD = new CustomerData();
         this.o = new Order();
         this.oq = new OrderQueue();
@@ -31,15 +31,16 @@ public class _Connection
         }
         return false;   
     }
-    public boolean addPremadePizza(Pizza p)
+    public boolean addPremadePizza(char size, ArrayList<String> toppings, String sauce, String name, double price)
     {
         if(cart.getSize() < 10)
         {
+            p = new Pizza(size, toppings, sauce, name, price);
             cart.insetPizza(p);
             return true;
         }
         return false;
-    }
+    } 
     public void newCustomerData(String name, String phone, String card)
     {
         customerD = new CustomerData(name, phone, card);

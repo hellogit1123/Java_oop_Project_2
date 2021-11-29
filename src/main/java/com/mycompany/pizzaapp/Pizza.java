@@ -21,6 +21,14 @@ public class Pizza
             this.addToppings(t);
         }
     }
+    Pizza(char size, ArrayList<String> toppings, String sauce, String name, double price)
+    {
+        this.pizzaName = name;
+        this.sauce = sauce;
+        this.price = price;
+        this.setSize(size);
+        this.toppings = toppings;
+    }
     public String getSize()
     {
         if(this.size == 's')

@@ -22,7 +22,8 @@ public class __Order_Custom extends javax.swing.JFrame {
     int x = 150;
     premade_pizzas pre = new premade_pizzas();
     MyIterator it = pre.iter();
-    
+    __popup pop;
+    Pizza p;
     public __Order_Custom() {
         initComponents();
     }
@@ -538,6 +539,7 @@ public class __Order_Custom extends javax.swing.JFrame {
 
     public void method1(int index)
     {
+
         boolean proceed = true;
         
         if(jRadioButton1.isSelected())
@@ -555,19 +557,24 @@ public class __Order_Custom extends javax.swing.JFrame {
             p.show();
         }else
         {
-            
-            Pizza p;
-            p = pz.get(index);
-            p.setSize(size);
-            
-            
-            if(c.addPremadePizza(p))
+            String name = pz.get(index).getName();
+            String toppings = pz.get(index).getToppings();
+            String sauce = pz.get(index).getSauce();
+            double price = Double.valueOf(pz.get(index).getPrice());
+            String[] split = toppings.split(" ");
+            ArrayList<String> topping_list = new ArrayList<String>();
+            for(String s:split)
             {
-                __popup pop = new __popup(p.getName()+ "\nsuccessfully added to the cart");
+                topping_list.add(s);
+            }
+
+            if(c.addPremadePizza(size, topping_list, sauce, name, price))//c.addPremadePizza(p))
+            {
+                pop = new __popup(pz.get(index).getName()+ "\nsuccessfully added to the cart");
                 pop.show();
             }else
             {
-                __popup pop = new __popup("Cart Size limit of 10 exceeded");
+                pop = new __popup("Cart Size limit of 10 exceeded");
                 pop.show();
             }
         }

@@ -6,7 +6,7 @@ public class main
     {     
         System.out.println("I am in main");
         Cart cart = new Cart();
-        _Connection conn = new _Connection(cart);
+        _Connection conn = new _Connection();
         
         __Welcome w = new __Welcome(conn);
         w.show();
